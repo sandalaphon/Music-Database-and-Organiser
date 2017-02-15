@@ -39,7 +39,7 @@ class Artist
 def album
   sql = "SELECT * FROM albums WHERE artist_id = #{@id};"
   hashes=SqlRunner.run(sql)
-  hashes.map{|dope| Album(dope)}
+  return hashes.map{|dope| Album.new(dope)}
   end
 
 
