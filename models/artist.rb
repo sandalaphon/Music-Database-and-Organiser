@@ -8,7 +8,7 @@ class Artist
     @id = options['id'].to_i if options['id']
   end
 
-  def save
+  def save()
     sql = "INSERT INTO artists (name) VALUES ('#{@name}') RETURNING *;"
     @id = SqlRunner.run(sql)[0]['id'].to_i
   end

@@ -42,6 +42,11 @@ SET (name, year, genre, artist_id
 SqlRunner.run(sql)
 end
 
+def artist
+  sql = "SELECT * FROM artists WHERE id=#{@artist_id};"
+  artists=SqlRunner.run(sql)
+  return artists.map{|artists_hash| Artist.new(artists_hash)}[0]
+end
 
 
 
