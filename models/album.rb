@@ -34,7 +34,13 @@ def delete()
   SqlRunner.run(sql)
   end
 
-
+def update()
+  sql = "UPDATE albums 
+SET (name, year, genre, artist_id
+) = (
+'#{@name}', #{year}, '#{genre}', #{@artist_id}) WHERE id = #{@id};"
+SqlRunner.run(sql)
+end
 
 
 
